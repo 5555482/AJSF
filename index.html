@@ -3,15 +3,28 @@
   <head>
     <title>Using AngularJS Directives and Data Binding</title>
   </head>
-  <body data-ng-init="averageGentlemen=[{name:'John Smith', city:'London'}, {name:'William Jones', city:'Birmingham'}, {name:'Thomas Taylor', city:'Leeds'}, {name:'George Williams',city:'Glasgow'},{name:'James Brown',city:'Sheffield'}]">
-  	Name:
-  	<br />
-  		<input type="text" data-ng-model = "name" /> 
-  	<br />
-  	<ul>
-  		<li data-ng-repeat="popular in averageGentlemen | filter:name | orderBy:city"> {{ popular.name }} - {{ popular.city }}</li>
-  	</ul>
+  <body>
+  	<div data-ng-controller="SimpleController">
+	  	Name:
+	  	<br />
+	  		<input type="text" data-ng-model = "name" /> 
+	  	<br />
+	  	<ul>
+	  		<li data-ng-repeat="popular in averageGentlemen | filter:name | orderBy:city"> {{ popular.name }} - {{ popular.city }}</li>
+	  	</ul>
+  	</div>
       <script src="Scripts/angular.min.js"></script>
+      <script>
+      	function SimpleController($scope) {
+      		$scope.averageGentlemen = [
+      			{ name:'John Smith', city:'London' },
+      			{ name:'William Jones', city:'Birmingham' },
+      			{ name:'Thomas Taylor', city:'Leeds' },
+      			{ name:'George Williams',city:'Glasgow' },
+      			{ name:'James Brown',city:'Sheffield' }
+      		];
+      	}
+      </script>
   </body>
 </html>
     
