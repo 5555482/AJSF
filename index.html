@@ -3,10 +3,14 @@
   <head>
     <title>Using AngularJS Directives and Data Binding</title>
   </head>
-  <body>
+  <body data-ng-init="names=['John Smith', 'William Jones', 'Thomas Taylor', 'George Williams','James Brown']">
   	Name:
   	<br />
   		<input type="text" data-ng-model = "name" /> {{ name }}
+  	<br />
+  	<ul>
+  		<li data-ng-repeat="popularName in names"> {{ popularName }}</li>
+  	</ul>
       <script src="Scripts/angular.min.js"></script>
   </body>
 </html>
