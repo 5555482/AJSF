@@ -1,4 +1,4 @@
 # AJSF
 
 
-<img src="sm.jpg" width="800">
+<img src="sm.jpg">
