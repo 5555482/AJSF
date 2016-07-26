@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="">
+<html data-ng-app="demoApp">
   <head>
     <title>Using AngularJS Directives and Data Binding</title>
   </head>
@@ -15,7 +15,9 @@
   	</div>
       <script src="Scripts/angular.min.js"></script>
       <script>
-      	function SimpleController($scope) {
+      	var demoApp = angular.module('demoApp', []);
+      	var controllers = {};
+      	controllers.SimpleController = function ($scope) {
       		$scope.averageGentlemen = [
       			{ name:'John Smith', city:'London' },
       			{ name:'William Jones', city:'Birmingham' },
@@ -23,7 +25,8 @@
       			{ name:'George Williams',city:'Glasgow' },
       			{ name:'James Brown',city:'Sheffield' }
       		];
-      	}
+      	};
+      	demoApp.controller(controllers);
       </script>
   </body>
 </html>
